@@ -160,10 +160,10 @@ data:
 
         metrics_path: '/mgmt/shared/telemetry/pullconsumer/metrics'
         basic_auth:
-          username: 'prometheus'
-          password: 'DefaultPass12345!'
+          username: 'admin'
+          password: 'Ttbs@123'
         static_configs:
-        - targets: ['10.0.1.5', '10.0.1.4']
+        - targets: ['192.168.110.167']
 
       - job_name: f5-cis
         scrape_interval: 10s

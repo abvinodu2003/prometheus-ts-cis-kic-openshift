@@ -46,7 +46,7 @@ spec:
             # https://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest
             "--bigip-username=$(BIGIP_USERNAME)",
             "--bigip-password=$(BIGIP_PASSWORD)",
-            "--bigip-url=10.0.1.4",
+            "--bigip-url=192.168.110.167",
             # "--ingress-link-mode=true",
             "--bigip-partition=kubernetes",
             "--pool-member-type=cluster",

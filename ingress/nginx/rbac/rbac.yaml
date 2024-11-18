@@ -5,6 +5,7 @@ metadata:
 rules:
 - apiGroups:
   - ""
+  - discovery.k8s.io
   resources:
   - services
   - endpoints
@@ -61,6 +62,7 @@ rules:
   - update
 - apiGroups:
   - k8s.nginx.org
+  - transportservers.k8s.nginx.org
   resources:
   - virtualservers
   - virtualserverroutes
@@ -73,12 +75,16 @@ rules:
   - get
 - apiGroups:
   - k8s.nginx.org
+  - transportservers.k8s.nginx.org
   resources:
   - virtualservers/status
   - virtualserverroutes/status
   - policies/status
   - transportservers/status
   verbs:
+  - list
+  - watch
+  - get
   - update
 - apiGroups:
   - networking.k8s.io

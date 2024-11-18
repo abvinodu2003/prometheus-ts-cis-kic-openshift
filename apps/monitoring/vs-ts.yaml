@@ -6,7 +6,7 @@ metadata:
   name: svc1-tcp-transport-server
   namespace: monitoring
 spec:
-  virtualServerAddress: "10.0.2.102"
+  virtualServerAddress: "192.168.101.101"
   virtualServerPort: 9090
   virtualServerName: prometheus-1
   mode: standard

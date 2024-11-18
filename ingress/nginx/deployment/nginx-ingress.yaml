@@ -21,7 +21,8 @@ spec:
     spec:
       serviceAccountName: nginx-ingress
       containers:
-      - image: nginx/nginx-ingress:1.11.0
+      - image: nginx/nginx-ingress:latest
+      #- image: nginx/nginx-ingress:1.11.0
         imagePullPolicy: IfNotPresent
         name: nginx-ingress
         ports:
@@ -42,7 +43,8 @@ spec:
           periodSeconds: 1
         securityContext:
           allowPrivilegeEscalation: true
-          runAsUser: 101 #nginx
+          #runAsUser: 101 #nginx
+          runAsUser: 1000690000 #nginx
           capabilities:
             drop:
             - ALL
@@ -64,4 +66,5 @@ spec:
          #- -report-ingress-status
          #- -external-service=nginx-ingress
           - -enable-prometheus-metrics
+          - -enable-custom-resources
          #- -global-configuration=$(POD_NAMESPACE)/nginx-configuration
