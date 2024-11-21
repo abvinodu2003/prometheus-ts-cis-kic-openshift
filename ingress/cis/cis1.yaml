@@ -23,7 +23,9 @@ spec:
       # permissions
       containers:
         - name: k8s-bigip-ctlr
-          image: "f5networks/k8s-bigip-ctlr:2.3.0"
+          #image: "f5networks/k8s-bigip-ctlr:2.3.0"
+          image: "f5networks/k8s-bigip-ctlr:2.18.1"
+          #image: "f5networks/k8s-bigip-ctlr:latest"
           env:
             - name: BIGIP_USERNAME
               valueFrom:
@@ -48,13 +50,14 @@ spec:
             "--bigip-password=$(BIGIP_PASSWORD)",
             "--bigip-url=192.168.110.167",
             # "--ingress-link-mode=true",
-            "--bigip-partition=kubernetes",
+            "--bigip-partition=ocpclusterpart",
             "--pool-member-type=cluster",
             "--insecure",
-            #"--custom-resource-mode=true",
+            "--custom-resource-mode=true",
             "--http-listen-address=0.0.0.0:8080",
             "--log-level=DEBUG",
-            "--ipam=true"
+            #"--ipam=true",
+            "--static-routing-mode=true"
             # for secure communication provide the internal ca certificates using config-map with below option and remove insecure parameter
             #"--trusted-certs-cfgmap=<namespace/configmap>",
             ]
