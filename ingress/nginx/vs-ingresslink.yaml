@@ -5,8 +5,8 @@ metadata:
   namespace: nginx-ingress
 spec:
   virtualServerAddress: "192.168.101.101"
-  iRules:
-    - /Common/Shared/Proxy_Protocol_iRule
+  #iRules:
+  #  - /Common/Shared/Proxy_Protocol_iRule
   selector:
     matchLabels:
       app: nginx-ingress

@@ -49,15 +49,22 @@ spec:
             "--bigip-username=$(BIGIP_USERNAME)",
             "--bigip-password=$(BIGIP_PASSWORD)",
             "--bigip-url=192.168.110.167",
-            # "--ingress-link-mode=true",
+            #"--ingress-link-mode=true",
             "--bigip-partition=ocpclusterpart",
             "--pool-member-type=cluster",
-            "--insecure",
-            "--custom-resource-mode=true",
+            #"--insecure",
+            #"--namespace=nginx-ingress",
+            "--insecure=true",
+            #"--custom-resource-mode=true",
             "--http-listen-address=0.0.0.0:8080",
             "--log-level=DEBUG",
             #"--ipam=true",
-            "--static-routing-mode=true"
+            "--static-routing-mode=true",
+            "--log-as3-response=true",
+            "--orchestration-cni=ovn-k8s",
+            "--as3-validation=true",
+            #"--route-label="
+            #"--controller-mode=openshift"
             # for secure communication provide the internal ca certificates using config-map with below option and remove insecure parameter
             #"--trusted-certs-cfgmap=<namespace/configmap>",
             ]
